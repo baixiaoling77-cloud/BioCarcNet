@@ -1,0 +1,27 @@
+__pycache__/
+*.py[cod]
+*.log
+build/
+dist/
+*.egg-info/
+
+.venv/
+venv/
+.idea/
+.vscode/
+.DS_Store
+
+logs/
+outputs/
+model_save/
+*.pt
+*.pth
+*.ckpt
+*.npz
+
+# Keep only the documented release dataset under version control.
+data/*
+!data/README.md
+!data/biocarcnet.csv
+!data/external_isscan.csv
+

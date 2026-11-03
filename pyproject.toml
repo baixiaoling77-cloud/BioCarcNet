@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "biocarcnet"
+version = "0.1.0"
+description = "Condition-aware molecular carcinogenicity modeling"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "numpy",
+  "pandas",
+  "rdkit",
+  "scikit-fingerprints",
+  "scikit-learn",
+  "torch",
+  "torch-geometric",
+  "tqdm",
+]
+
+[project.optional-dependencies]
+io = ["openpyxl", "xlrd"]
+dev = ["pytest", "ruff"]
+
+[project.scripts]
+biocarcnet-train = "biocarcnet.cli.train:main"
+biocarcnet-predict = "biocarcnet.cli.predict:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "I"]
+

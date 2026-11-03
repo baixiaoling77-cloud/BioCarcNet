@@ -1,0 +1,10 @@
+numpy
+pandas
+rdkit
+scikit-fingerprints
+scikit-learn
+torch
+torch-geometric
+tqdm
+openpyxl
+xlrd
